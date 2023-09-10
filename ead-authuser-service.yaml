@@ -45,7 +45,7 @@ ead:
 
 authuser:
   refreshscope:
-    name: Porquinho Pai
+    name: Porquinho Filho
 
 management:
   endpoints:
