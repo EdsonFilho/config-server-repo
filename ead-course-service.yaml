@@ -46,3 +46,15 @@ ead:
       userEventQueue:
         name: ead.userevent.ms.course
 
+authuser:
+  refreshscope:
+    name: Porquinho Filho
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+
