@@ -1,0 +1,48 @@
+
+server:
+  port: 8082
+  servlet:
+    context-path: '/ead-course/'
+
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: ead-course-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ead-course-v2
+    username: postgres
+    password: Decoder_16
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
+  output:
+    ansi:
+      enabled: always
+  rabbitmq:
+    addresses: amqps://xmygavpw:nHIsL2w5WUugU1KlU0ear3J1wL1k_c9g@rat.rmq2.cloudamqp.com/xmygavpw
+
+logging:
+  level:
+    com.ead: TRACE
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+
+ead:
+  api:
+    url:
+      authuser: 'http://ead-authuser-service/ead-authuser'
+  broker:
+    exchange:
+      userEventExchange: ead.userevent
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.course
+
