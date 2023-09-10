@@ -45,4 +45,12 @@ ead:
 
 authuser:
   refreshscope:
-    name: Porquinho Filho
+    name: Porquinho Pai
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
